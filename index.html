@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big One Mart | Groceries & Premium Runcit, Penang</title>
+<meta name="description" content="Big One Mart — retail and wholesale of groceries and premium runcit, in-store and online. Serving Penang from Bayan Lepas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0f5132;
+    --green-2:#16704a;
+    --leaf:#d9efe2;
+    --saffron:#f4a51c;
+    --saffron-2:#ffcf6b;
+    --cream:#fbf7ef;
+    --ink:#14211a;
+    --muted:#5b6b62;
+    --line:#e7e0d1;
+    --white:#fff;
+    --radius:18px;
+    --shadow:0 10px 30px -12px rgba(15,81,50,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Bricolage Grotesque",Inter,sans-serif;line-height:1.1;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  img{max-width:100%;object-fit:cover}
+  .ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.4rem;border-radius:999px;font-weight:600;background:var(--saffron);color:var(--ink);box-shadow:0 8px 20px -8px rgba(244,165,28,.7);transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-2px);background:var(--saffron-2)}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-2)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;gap:.6rem;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;color:var(--green)}
+  .logo-mark{width:38px;height:38px;border-radius:11px;background:var(--green);display:grid;place-items:center;color:var(--saffron);font-size:1.05rem;font-weight:800}
+  .nav-links{display:flex;gap:2rem;font-weight:500;color:var(--muted)}
+  .nav-links a:hover{color:var(--green)}
+
+  /* Hero */
+  .hero{padding:72px 0 96px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.5vw,4.4rem);font-weight:800;color:var(--green);margin:.8rem 0 1.2rem}
+  .hero h1 em{font-style:normal;color:var(--ink);background:linear-gradient(transparent 62%,var(--saffron-2) 62%)}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:34rem}
+  .hero .btn{margin-top:2rem}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:22px;margin-top:2.4rem;font-size:.92rem;color:var(--muted)}
+  .hero-badges span{display:flex;align-items:center;gap:.45rem}
+  .hero-badges .ico{color:var(--green-2);width:18px;height:18px}
+  .hero-media{position:relative}
+  .hero-img{width:100%;aspect-ratio:4/5;border-radius:32px;box-shadow:var(--shadow)}
+  .hero-media::before{content:"";position:absolute;inset:24px -24px -24px 24px;border-radius:32px;background:var(--green);z-index:-1}
+
+  /* Sections */
+  section{padding:96px 0}
+  .sec-head{max-width:640px;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--green);margin:.6rem 0 .9rem}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+  .center{text-align:center;margin-inline:auto}
+
+  /* About */
+  .about-sec{background:var(--white);border-block:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-img{width:100%;aspect-ratio:4/3;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .about-text p{color:var(--muted);font-size:1.05rem;margin-bottom:1rem}
+  .about-text h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--green);margin:.6rem 0 1.2rem}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem}
+  .stat{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .stat strong{display:block;font-family:"Bricolage Grotesque";font-size:1.15rem;color:var(--green)}
+  .stat span{font-size:.85rem;color:var(--muted)}
+
+  /* Range */
+  .range{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;gap:16px;align-items:flex-start}
+  .item .dot{flex:none;width:46px;height:46px;border-radius:12px;background:var(--leaf);color:var(--green);display:grid;place-items:center}
+  .item h3{font-size:1.15rem;margin-bottom:.2rem}
+  .item p{color:var(--muted);font-size:.93rem}
+
+  /* Footer */
+  footer{background:var(--ink);color:#b9c4bd;padding:40px 0;font-size:.9rem}
+  .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+  footer .logo{color:var(--white)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* Responsive */
+  @media (max-width:960px){
+    .hero-grid,.about-grid{grid-template-columns:1fr}
+    .hero-media{max-width:460px;margin-inline:auto;width:100%}
+    .range{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    .nav-links{display:none}
+    section{padding:72px 0}
+    .hero{padding:44px 0 72px}
+    .hero-media::before{inset:16px -10px -16px 16px}
+  }
+  @media (max-width:560px){
+    .range{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Line icons, referenced below with <use href="#i-…"> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 4h14v12H1zM15 9h4l4 4v3h-8"/><circle cx="6" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-grain" viewBox="0 0 24 24"><path d="M12 21V9M12 9c0-3 2-5 4-6-1 3-1 5-4 6zM12 9c0-3-2-5-4-6 1 3 1 5 4 6zM12 14c2-3 5-3 7-3-1 3-4 4-7 3zM12 14c-2-3-5-3-7-3 1 3 4 4 7 3z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-3 2-5 5-5 8a7 7 0 0 0 7 7z"/></symbol>
+  <symbol id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="11" r="1"/><circle cx="10" cy="15" r="1"/></symbol>
+  <symbol id="i-egg" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7.5S16 2 12 2 5 10 5 14.5 8 22 12 22z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="logo-mark">B1</span>Big One Mart</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#range">Our Range</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Groceries · Runcit · Online</span>
+        <h1>Your <em>everyday</em> essentials, one big mart away.</h1>
+        <p class="lead">Big One Mart is a Penang grocery and runcit mart, serving households, shops and businesses in store, in bulk and online.</p>
+        <a href="#about" class="btn">Discover Big One Mart <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <div class="hero-badges">
+          <span><svg class="ico"><use href="#i-cart"/></svg>Retail &amp; Wholesale</span>
+          <span><svg class="ico"><use href="#i-truck"/></svg>Shop online</span>
+          <span><svg class="ico"><use href="#i-pin"/></svg>Bayan Lepas, Penang</span>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1639666825949-a7620fa529cb?w=900&q=75&auto=format&fit=crop" alt="Shelves packed with goods in a Malaysian kedai runcit">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-sec">
+    <div class="wrap about-grid">
+      <img class="about-img reveal" src="https://images.unsplash.com/photo-1739193936611-2b3d01a8058e?w=900&q=70&auto=format&fit=crop" alt="Shopkeeper at a Penang grocery stall" loading="lazy">
+      <div class="about-text reveal">
+        <span class="eyebrow">About us</span>
+        <h2>A Penang mart for everyday needs</h2>
+        <p>Big One Mart brings together the groceries and runcit goods that Malaysian homes and businesses rely on every day, from kitchen staples to household sundries.</p>
+        <p>We sell retail to families, supply in bulk to kedai runcit, mini marts and cafés, and take orders online, all with fair prices and friendly service.</p>
+        <div class="stats">
+          <div class="stat"><strong>Retail</strong><span>For families</span></div>
+          <div class="stat"><strong>Wholesale</strong><span>For businesses</span></div>
+          <div class="stat"><strong>Online</strong><span>Shop anytime</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Range -->
+  <section id="range">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Our range</span>
+        <h2>Everything for the pantry &amp; home</h2>
+        <p>A wide variety of goods under one roof.</p>
+      </div>
+      <div class="range">
+        <div class="item reveal"><span class="dot"><svg class="ico"><use href="#i-grain"/></svg></span><div><h3>Rice &amp; Dry Goods</h3><p>Rice, flour and pantry staples.</p></div></div>
+        <div class="item reveal"><span class="dot"><svg class="ico"><use href="#i-flame"/></svg></span><div><h3>Spices &amp; Cooking</h3><p>Spices, dried seafood, sauces and oil.</p></div></div>
+        <div class="item reveal"><span class="dot"><svg class="ico"><use href="#i-cookie"/></svg></span><div><h3>Snacks &amp; Kuih</h3><p>Local crackers, biscuits and treats.</p></div></div>
+        <div class="item reveal"><span class="dot"><svg class="ico"><use href="#i-egg"/></svg></span><div><h3>Eggs &amp; Daily Fresh</h3><p>Eggs and everyday fresh supplies.</p></div></div>
+        <div class="item reveal"><span class="dot"><svg class="ico"><use href="#i-bag"/></svg></span><div><h3>Runcit Essentials</h3><p>Household and everyday sundries.</p></div></div>
+        <div class="item reveal"><span class="dot"><svg class="ico"><use href="#i-star"/></svg></span><div><h3>Premium Runcit</h3><p>Curated, higher-grade goods.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo"><span class="logo-mark">B1</span>Big One Mart</div>
+    <span>Bayan Lepas, Pulau Pinang, Malaysia</span>
+    <span>© <span id="yr"></span> Big One Mart Sdn. Bhd.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
